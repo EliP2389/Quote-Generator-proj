@@ -4,6 +4,7 @@ const authorText = document.getElementById('author')
 const twitterBtn = document.getElementById('twitter')
 const newQuoteBtn = document.getElementById('new-quote')
 
+
 // Get Quotes From API
 async function getQuotes() {
     const options = {
@@ -17,7 +18,8 @@ async function getQuotes() {
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err))
+
 }
 
 // On Load
-getQuotes();
+getQuotes()
