@@ -17,19 +17,31 @@ async function getQuotes() {
     .then((response) => {
       return response.json();
     })
-    .then(function (quoteData) {
-      // Checks if Author field is blank and replaces it with 'Unknown!'
-      !quoteData
-        ? (authorText.textContent = "Unknown!")
-        : (authorText.textContent = quoteData.author);
-      // Check Quote length to determine styling'
-      quoteData.quote.length > 120
-        ? quoteText.classList.add("long-quote")
-        : quoteText.classList.remove("long-quote");
-      quoteText.textContent = quoteData.quote;
-    })
+    .then(
+      (quotes = (quoteData) => {
+        // Checks if Author field is blank and replaces it with 'Unknown!'
+        !quoteData
+          ? (authorText.textContent = "Unknown!")
+          : (authorText.textContent = quoteData.author);
+        // Check Quote length to determine styling'
+        quoteData.quote.length > 120
+          ? quoteText.classList.add("long-quote")
+          : quoteText.classList.remove("long-quote");
+        quoteText.textContent = quoteData.quote;
+      })
+    )
     .catch((err) => console.error(err));
 }
 
-// On Load
+// Tweet Quote
+tweetQuote = () => {
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
+  window.open(twitterUrl, "_blank");
+};
+
+// Event Listener
+twitterBtn.addEventListener('click', tweetQuote);
+newQuoteBtn.addEventListener('click', getQuotes)
+
+// On load
 getQuotes();
