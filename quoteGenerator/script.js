@@ -41,6 +41,7 @@ async function getQuotes() {
         quoteData.quote.length > 120
           ? quoteText.classList.add("long-quote")
           : quoteText.classList.remove("long-quote");
+        //  Set quote, hide loader
         quoteText.textContent = quoteData.quote;
         complete();
       })
