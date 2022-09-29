@@ -12,6 +12,6 @@ A quote generator that uses an api to display inspirational quotes, with the abi
 <img src="./assets/img/quote-img.png">
 
 ## How To
-* Copy & Paste https://github.com/EliP2389/Quote-Generator-proj.git to local machine.
+* Copy & Paste & Copy to local machine https://github.com/EliP2389/Quote-Generator-proj.git 
 * Open VS Code
 * Open Live Server and generate quotes
