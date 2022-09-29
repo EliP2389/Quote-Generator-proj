@@ -40,8 +40,8 @@ tweetQuote = () => {
 };
 
 // Event Listener
-twitterBtn.addEventListener('click', tweetQuote);
-newQuoteBtn.addEventListener('click', getQuotes)
+twitterBtn.addEventListener("click", tweetQuote);
+newQuoteBtn.addEventListener("click", getQuotes);
 
 // On load
 getQuotes();
