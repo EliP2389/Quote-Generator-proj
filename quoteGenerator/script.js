@@ -17,10 +17,13 @@ async function getQuotes() {
     .then((response) => {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
-      quoteText.textContent = data.quote;
-      authorText.textContent = data.author;
+    .then(function (quoteData) {
+      quoteData
+        ? (authorText.textContent = quoteData.author)
+        : (authorText.textContent = "Not Found!");
+      quoteData
+        ? (quoteText.textContent = quoteData.quote)
+        : (quoteText.textContent = "Not Found!");
     })
     .catch((err) => console.error(err));
 }
