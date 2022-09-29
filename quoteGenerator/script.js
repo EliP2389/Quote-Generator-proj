@@ -7,18 +7,19 @@ const loader = document.getElementById("loader");
 
 // Show loading
 loading = () => {
-loader.hidden = false;
-quoteContainer.hidden = true;
-}
+  loader.hidden = false;
+  quoteContainer.hidden = true;
+};
 
 // Hide loading
 complete = () => {
-    quoteContainer.hidden = false;
-    loader.hidden = true;
-}
+  quoteContainer.hidden = false;
+  loader.hidden = true;
+};
 
 // Get Quotes From API
 async function getQuotes() {
+  loading();
   const options = {
     method: "GET",
     headers: {
@@ -41,6 +42,7 @@ async function getQuotes() {
           ? quoteText.classList.add("long-quote")
           : quoteText.classList.remove("long-quote");
         quoteText.textContent = quoteData.quote;
+        complete();
       })
     )
     .catch((err) => console.error(err));
