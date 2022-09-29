@@ -18,12 +18,15 @@ async function getQuotes() {
       return response.json();
     })
     .then(function (quoteData) {
-      quoteData
-        ? (authorText.textContent = quoteData.author)
-        : (authorText.textContent = "Not Found!");
-      quoteData
-        ? (quoteText.textContent = quoteData.quote)
-        : (quoteText.textContent = "Not Found!");
+      // Checks if Author field is blank and replaces it with 'Unknown!'
+      !quoteData
+        ? (authorText.textContent = "Unknown!")
+        : (authorText.textContent = quoteData.author);
+      // Check Quote length to determine styling'
+      quoteData.quote.length > 120
+        ? quoteText.classList.add("long-quote")
+        : quoteText.classList.remove("long-quote");
+      quoteText.textContent = quoteData.quote;
     })
     .catch((err) => console.error(err));
 }
