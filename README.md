@@ -6,13 +6,13 @@ To create a quote generator that displays inspirational quotes at the click of a
 ## Description
 A quote generator that uses an api to display inspirational quotes, with the ability to view new quotes when clicking the new quote button, and also being able to add those quotes to your twitter when clicking the twitter button.
 
-## Built with
+## Built With
 * JavaScript
 * CSS
 * HTML
 
 ## Preview Of Page
-<img src="./assets/img/quote-img.png">
+<img src="./assets/img/quote-img.png" alt='quote generator'>
 
 ## Deployed Site
-https://elip2389.github.io/Quote-Generator-proj/quoteGenerator/index.html
+https://quote-generator-elip2389.vercel.app/
